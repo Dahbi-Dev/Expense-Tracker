@@ -12,9 +12,9 @@ export default function ({ incomes, expenses }) {
                 expenses.map(expenses => (
                     <li key={expenses.id} className="list-group-item list-group-item-action">
                     <div className="d-flex w-100 justify-content-between">
-                      <h6 className="mb-1">{expenses.label} ${expenses.amount}</h6>
+                      <h6 className="mb-1">{expenses.label} <span className="text-danger">${expenses.amount}</span></h6>
                       <span className="text-danger">
-                        <i class="bi bi-x-circle-fill"></i>
+                        <i className="bi bi-x-circle-fill"></i>
                       </span>
                     </div>
                   </li>
@@ -28,9 +28,9 @@ export default function ({ incomes, expenses }) {
               {incomes.map((incomes) => (
                 <li key={incomes.id} className="list-group-item list-group-item-action">
                   <div className="d-flex w-100 justify-content-between">
-                    <h6 className="mb-1">{incomes.label} ${incomes.amount}</h6>
+                    <h6 className="mb-1">{incomes.label} <span className="text-success">${incomes.amount}</span></h6>
                     <span className="text-danger">
-                      <i class="bi bi-x-circle-fill"></i>
+                      <i className="bi bi-x-circle-fill"></i>
                     </span>
                   </div>
                 </li>
