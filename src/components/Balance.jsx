@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react'
 
 
-export default function Balance({balances}) {
-    const [balance , setBalance] = useState(0)
+export default function Balance({balance}) {
+    const [currentBalance , setCurrentBalance] = useState(0)
 
-    useEffect(()=>{
+    useEffect((balance)=>{
 
-        setBalance(balances)
-    },[balances]);
+        setCurrentBalance(balance)
+    },[balance]);
   return (
     <div className='bg-white border border-success text-center rounded'>
         <p className='lead mt-3'>
-            <span className='fw-bold me-2'>Balance:</span>
-            <span className='badge bg-success'>$ {balance}</span>
+            <span className='fw-bold me-2'>Money:</span>
+            <span className={balance <= 0 ? 'badge bg-danger' : 'badge bg-success'}>{balance} DH</span>
         </p>
     </div>
   )
