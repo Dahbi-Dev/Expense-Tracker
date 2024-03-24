@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({ incomes, expenses }) {
+export default function ({ incomes, expenses, removeIncome, removeExpense }) {
   return (
     <div className="row my-3">
       <div className="col-md-10 mx-auto">
@@ -13,7 +13,8 @@ export default function ({ incomes, expenses }) {
                     <li key={expenses.id} className="list-group-item list-group-item-action">
                     <div className="d-flex w-100 justify-content-between">
                       <h6 className="mb-1">{expenses.label} <span className="text-danger">${expenses.amount}</span></h6>
-                      <span className="text-danger">
+                      <span className="text-danger"
+                      onClick={()=> removeExpense(expenses.id)}>
                         <i className="bi bi-x-circle-fill"></i>
                       </span>
                     </div>
@@ -29,7 +30,8 @@ export default function ({ incomes, expenses }) {
                 <li key={incomes.id} className="list-group-item list-group-item-action">
                   <div className="d-flex w-100 justify-content-between">
                     <h6 className="mb-1">{incomes.label} <span className="text-success">${incomes.amount}</span></h6>
-                    <span className="text-danger">
+                    <span className="text-danger"
+                    onClick={()=> removeIncome(incomes.id)}>
                       <i className="bi bi-x-circle-fill"></i>
                     </span>
                   </div>
