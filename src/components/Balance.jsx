@@ -9,7 +9,7 @@ export default function Balance({balance}) {
         setCurrentBalance(balance)
     },[balance]);
   return (
-    <div className='bg-white border border-success text-center rounded'>
+    <div className={`bg-white border  ${balance <= 0 ? 'border-danger' : 'border-success'}  text-center rounded`}>
         <p className='lead mt-3'>
             <span className='fw-bold me-2'>Money:</span>
             <span className={balance <= 0 ? 'badge bg-danger' : 'badge bg-success'}>{balance} DH</span>

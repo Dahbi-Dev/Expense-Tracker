@@ -15,7 +15,6 @@ export default function Transaction({ addIncomes, addExpenses }) {
   };
   const addExp = (expense) => {
     addExpenses(expense);
-    // console.log(expense);
 
     setTimeout(() => {
       setLabel("");
@@ -23,19 +22,10 @@ export default function Transaction({ addIncomes, addExpenses }) {
     }, 500);
   };
   return (
-    <div className="row">
-      <div className="col-md-6 mx-auto">
+    <div className="row justify-content-center">
+      <div className="col-md-6">
         <div action="" className="row g-3 my-3">
-          <div className="col-auto">
-            <button
-              disabled={!label || !amount}
-              className="btn btn-sm btn-success mb-3"
-              onClick={() => addInc({ id: uuidv4(), label, amount })}
-            >
-              <i className="bi bi-plus-circle-fill"> Income</i>
-            </button>
-          </div>
-          <div className="col-auto">
+          <div className="col-auto text-center">
             <input
               type="text"
               className="form-control mb-2"
@@ -51,13 +41,20 @@ export default function Transaction({ addIncomes, addExpenses }) {
               placeholder="Amount"
             />
           </div>
-          <div className="col-auto">
+          <div className="col-auto d-flex justify-content-center">
             <button
               disabled={!label || !amount}
-              className="btn btn-sm btn-danger mb-3"
+              className="btn btn-sm btn-success me-2"
+              onClick={() => addInc({ id: uuidv4(), label, amount })}
+            >
+              <i className="bi bi-plus-circle-fill"></i> Income
+            </button>
+            <button
+              disabled={!label || !amount}
+              className="btn btn-sm btn-danger"
               onClick={() => addExp({ id: uuidv4(), label, amount })}
             >
-              <i className="bi bi-x-circle-fill"> Expense</i>
+              <i className="bi bi-x-circle-fill"></i> Expense
             </button>
           </div>
         </div>
